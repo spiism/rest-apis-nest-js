@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
   NotFoundException,
   Param,
@@ -45,5 +46,13 @@ export class BookController {
     book: UpdateBookDto,
   ): Promise<Book> {
     return this.bookService.updateById(id, book);
+  }
+
+  @Delete(':id')
+  async deleteBook(
+    @Param('id')
+    id: string,
+  ): Promise<Book> {
+    return this.bookService.deleteById(id);
   }
 }
