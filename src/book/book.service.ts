@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Book } from './schemas/book.schema';
 import * as mongoose from 'mongoose';
 import { isValidObjectId } from 'mongoose';
+import { Query as ExpressQuery } from 'express-serve-static-core';
 
 @Injectable()
 export class BookService {
@@ -11,8 +12,18 @@ export class BookService {
     private bookModel: mongoose.Model<Book>,
   ) {}
 
-  async findAll(): Promise<Book[]> {
-    const books = await this.bookModel.find();
+  async findAll(query: ExpressQuery): Promise<Book[]> {
+    console.log(query, 'zzz');
+    const keyword = query.keyword
+      ? {
+          title: {
+            $regex: query.keyword,
+            $options: 'i',
+          },
+        }
+      : {};
+
+    const books = await this.bookModel.find({ ...keyword });
     return books;
   }
 
