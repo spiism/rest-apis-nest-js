@@ -75,6 +75,7 @@ Example:
 `GET /books/674544cb6a7cce6efae4987855`
 
 #### ✏️ Update a Book
+*Note:** This route is protected by `@UseGuards(AuthGuard())`, so you **must** provide a valid JWT token in the Authorization header to access it.
 PUT /books/:id
 Update a book’s information.
 Request Body Example:
@@ -86,6 +87,7 @@ Example:
 
 
 #### ❌ Delete a Book
+*Note:** This route is protected by `@UseGuards(AuthGuard())`, so you **must** provide a valid JWT token in the Authorization header to access it.
 DELETE /books/:id
 Deletes a book by its ID.
 Example:
