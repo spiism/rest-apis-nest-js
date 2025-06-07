@@ -1,6 +1,6 @@
-📚NestJS Backend
+# 📚NestJS Backend
 ---
-
+## Installation & Running
 ### Installation
 Clone the repository and install dependencies:
 
@@ -12,13 +12,14 @@ Clone the repository and install dependencies:
 Server will be running at:
 http://localhost:3000
 
-# 📘 API Endpoints
-## 🔖 Books
+## 📘 API Endpoints
+### 🔖 Books
 
-### ➕ Create a New Book
+#### ➕ Create a New Book
 POST /book/new
 
 Creates a new book entry.
+**Note:** This route is protected by `@UseGuards(AuthGuard())`, so you **must** provide a valid JWT token in the Authorization header to access it.
 Request Body:
 
 ```json
@@ -32,16 +33,16 @@ Request Body:
 ```
 
 
-### 📚 Get All Books
+#### 📚 Get All Books
 GET /book
 Returns a list of all books.
 
 
-### 📄 Get Paginated Books
+#### 📄 Get Paginated Books
 GET /books?page=2
 Returns books from page 2. Adjust the page number as needed.
 
-### 📄 Get Paginated Books with Keyword Search
+#### 📄 Get Paginated Books with Keyword Search
 **GET** `/books?keyword=book 1&page=1`
 
 Fetches books that match the keyword "book 1" and returns results from page 1.
@@ -68,12 +69,12 @@ Fetches books that match the keyword "book 1" and returns results from page 1.
 ]
 ```
 
-### 📖 Get a Single Book by ID
+#### 📖 Get a Single Book by ID
 GET /books/:id
 Example:
 `GET /books/674544cb6a7cce6efae4987855`
 
-### ✏️ Update a Book
+#### ✏️ Update a Book
 PUT /books/:id
 Update a book’s information.
 Request Body Example:
@@ -84,15 +85,15 @@ Example:
 `PUT /books/674268d9afcc75a61752eea5`
 
 
-### ❌ Delete a Book
+#### ❌ Delete a Book
 DELETE /books/:id
 Deletes a book by its ID.
 Example:
 `DELETE /books/674268d9afcc75a61752eea5`
 
 
-## 👤 Authentication
-### 📝 Sign Up
+### 👤 Authentication
+#### 📝 Sign Up
 POST /auth/signup
 Registers a new user.
 Request Body:
@@ -103,7 +104,7 @@ Request Body:
 }`
 
 
-### 🔐 Log In
+#### 🔐 Log In
 POST /auth/login
 Authenticates a user.
 Request Body:

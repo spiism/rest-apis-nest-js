@@ -22,6 +22,7 @@ export class BookController {
   constructor(private bookService: BookService) {}
 
   @Get()
+  // @UseGuards(AuthGuard())
   async getAllBooks(@Query() query: ExpressQuery): Promise<Book[]> {
     return this.bookService.findAll(query);
   }
