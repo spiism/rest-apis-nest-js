@@ -97,21 +97,25 @@ Example:
 POST /auth/signup
 Registers a new user.
 Request Body:
-`{
+```json
+{
   "name": "michael",
   "email": "michael@gmail.com",
   "password": "123456"
-}`
+}
+```
 
 
 #### 🔐 Log In
 POST /auth/login
 Authenticates a user.
 Request Body:
-`{
+```json
+{
   "email": "michael@gmail.com",
   "password": "123456"
-}`
+}
+```
 
 
 
