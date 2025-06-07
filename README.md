@@ -105,7 +105,20 @@ Request Body:
 {
   "name": "michael",
   "email": "michael@gmail.com",
-  "password": "123456"
+  "password": "T9v#zLq3!mB@X1eF"
+}
+```
+
+#### 📝 Sign Up with role
+POST /auth/signup
+Registers a new user.
+Request Body:
+```json
+{
+  "name": "michael_admin",
+  "email": "michael_admin@gmail.com",
+  "password": "T9v#zLq3!mB@X1eF",
+  "role": ["user", "admin"]
 }
 ```
 
@@ -117,7 +130,7 @@ Request Body:
 ```json
 {
   "email": "michael@gmail.com",
-  "password": "123456"
+  "password": "T9v#zLq3!mB@X1eF"
 }
 ```
 
