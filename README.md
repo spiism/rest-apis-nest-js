@@ -17,9 +17,9 @@ http://localhost:3000
 
 #### ➕ Create a New Book
 POST /book/new
+> **Note:** This route is protected by `@UseGuards(AuthGuard())`. You **must** provide a valid JWT token in the `Authorization` header to access it.
 
 Creates a new book entry.
-**Note:** This route is protected by `@UseGuards(AuthGuard())`, so you **must** provide a valid JWT token in the Authorization header to access it.
 Request Body:
 
 ```json
@@ -75,8 +75,9 @@ Example:
 `GET /books/674544cb6a7cce6efae4987855`
 
 #### ✏️ Update a Book
-*Note:** This route is protected by `@UseGuards(AuthGuard())`, so you **must** provide a valid JWT token in the Authorization header to access it.
 PUT /books/:id
+> **Note:** This route is protected by `@UseGuards(AuthGuard())`. You **must** provide a valid JWT token in the `Authorization` header to access it.
+
 Update a book’s information.
 Request Body Example:
 `{
@@ -87,8 +88,9 @@ Example:
 
 
 #### ❌ Delete a Book
-*Note:** This route is protected by `@UseGuards(AuthGuard())`, so you **must** provide a valid JWT token in the Authorization header to access it.
 DELETE /books/:id
+> **Note:** This route is protected by `@UseGuards(AuthGuard())`. You **must** provide a valid JWT token in the `Authorization` header to access it.
+
 Deletes a book by its ID.
 Example:
 `DELETE /books/674268d9afcc75a61752eea5`
