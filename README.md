@@ -112,6 +112,11 @@ Request Body:
 #### 📝 Sign Up with role
 POST /auth/signup
 Registers a new user.
+
+
+> ⚠️ **Note:** The `role` field is only allowed during testing or development to create the initial admin user.  
+> In production, role assignment should be restricted and handled by authorized admin users only.
+> 
 Request Body:
 ```json
 {
