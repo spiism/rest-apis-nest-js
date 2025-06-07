@@ -48,6 +48,7 @@ export class BookController {
   }
 
   @Put(':id')
+  @UseGuards(AuthGuard())
   async updateBook(
     @Param('id')
     id: string,
@@ -58,6 +59,7 @@ export class BookController {
   }
 
   @Delete(':id')
+  @UseGuards(AuthGuard())
   async deleteBook(
     @Param('id')
     id: string,
