@@ -96,6 +96,26 @@ Example:
 `DELETE /books/674268d9afcc75a61752eea5`
 
 
+#### ✏️ Upload image files to a Book
+PUT /books/upload/:id
+
+This endpoint allows you to upload one or more image files to a specific book by its ID.
+
+Path Parameters:
+:id — The ID of the book you want to upload images to.
+
+Request Body:
+- Content-Type: multipart/form-data
+- Field name: files
+- Type: File  (supports multiple files from the backend)
+
+Example Request:
+`PUT /books/upload/674544c86a7cce6efae49876`
+Form Data:
+- Key:    files
+- Value:  [Choose file(s)]
+
+
 ### 👤 Authentication
 #### 📝 Sign Up
 POST /auth/signup
