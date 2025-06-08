@@ -9,6 +9,10 @@ async function bootstrap() {
 
   app.use(helmet());
 
+  app.enableCors({
+    origin: ['http://localhost:4000'],
+  });
+
   const config = new DocumentBuilder()
     .setTitle('My API')
     .setDescription('The API description')
