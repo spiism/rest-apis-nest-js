@@ -28,6 +28,9 @@ export class Book {
   @Prop()
   category: Category;
 
+  @Prop()
+  images?: object[];
+
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
   user: User;
 }
