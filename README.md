@@ -12,6 +12,18 @@ Clone the repository and install dependencies:
 Server will be running at:
 http://localhost:3000
 
+### Running Docker in Dev
+`docker-compose --profile dev up -d`
+
+Server will be running at:
+http://localhost:3000
+
+### Running Docker in Prod
+`docker-compose --profile prod up -d --build`
+
+Server will be running at:
+http://localhost:8080
+
 ## 📘 API Endpoints
 ### 🔖 Books
 
